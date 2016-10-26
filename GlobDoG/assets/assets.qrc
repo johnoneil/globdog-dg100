@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="png_files" >
+    <file>help.png</file>
+    <file>dg-100.png</file>
+    <file>satellite_green.png</file>
+    <file>satellite_red.png</file>
+  </qresource>
+</RCC>

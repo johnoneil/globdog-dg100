@@ -1,0 +1,9 @@
+Package: finny
+Version: 0.5-1
+Section: base
+Priority: optional
+Architecture: i386
+Depends: libc6 (>= 2.3.6-6~), libgcc1 (>= 1:4.1.1), libqtgui4 (>= 4.0 ), libqt4-webkit (>= 4.0 ), libqtcore4 (>= 4.0 ),  libqt4-xml (>= 4.0 ), libstdc++6 (>= 4.1.1), libxml2 (>= 2.6.27)
+Maintainer: John ONeil <oneil.code@gmail.com>
+Description: Linux manager for Radioshark2 USB radio.
+ A graphical manager application for the Radioshark2 USB device.

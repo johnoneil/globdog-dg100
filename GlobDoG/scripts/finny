@@ -1,0 +1,2 @@
+?package(finny):needs="X11" section="Apps/Accessories"\
+  title="finny" command="/usr/bin/finny" icon="/usr/share/pixmaps/finny_icon.png"

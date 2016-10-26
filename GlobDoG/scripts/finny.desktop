@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=0.5
+Encoding=UTF-8
+Name=Finny
+Type=Application
+GenericName=Radioshark2 Manager
+Comment=Manager for the Radioshark2 USB radio.
+Icon=finny_icon.png
+FilePattern=finny;
+Exec=finny
+Terminal=false
+StartupNotify=false
+Categories=Utility;
+GenericName[en_GB]=Radioshark Manager
+

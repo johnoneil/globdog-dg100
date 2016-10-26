@@ -1,0 +1,48 @@
+#!/bin/sh
+
+#packaging script for the globdog_dg100
+#This script circumvents the usual debian installer
+#tools to create a (very) simple package.
+#In the future it might be advisable to update
+#this to a full and proper package build, but
+#I feel the software is not mature enough for that.
+
+if [ $# -ne 1 ]; then
+	echo "Please provide a version number";
+	exit 127;
+fi
+
+VERSION=$1
+echo "Building executable version ${VERSION}";
+
+#form the name of the package we'll build
+EXE_NAME="finny";
+
+PACKAGE_NAME="${EXE_NAME}_${VERSION}_i386";
+
+echo "Package name: $PACKAGE_NAME";
+
+#Create the folder structure we'll put in the package
+mkdir -p packages/${PACKAGE_NAME}/usr/bin;
+mkdir -p packages/${PACKAGE_NAME}/usr/share/menu;
+mkdir -p packages/${PACKAGE_NAME}/usr/share/pixmaps;
+mkdir -p packages/${PACKAGE_NAME}/usr/share/applications;
+mkdir -p packages/${PACKAGE_NAME}/DEBIAN;
+
+#make sure permissions are correct on all directories
+
+#Fill up the file structure
+cp bin/${EXE_NAME} packages/${PACKAGE_NAME}/usr/bin;
+cp scripts/control packages/${PACKAGE_NAME}/DEBIAN;
+cp scripts/debian-binary packages/${PACKAGE_NAME};
+cp scripts/${EXE_NAME}.desktop packages/${PACKAGE_NAME}/usr/share/applications;
+cp scripts/${EXE_NAME} packages/${PACKAGE_NAME}/usr/share/menu;
+cp assets/finny_icon.png packages/${PACKAGE_NAME}/usr/share/pixmaps;
+
+#update versions in relevant files
+
+#build the package
+cd packages;
+dpkg-deb --build ${PACKAGE_NAME};
+
+exit 0;
